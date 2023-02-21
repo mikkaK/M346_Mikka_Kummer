@@ -1,0 +1,35 @@
+#cloud-config
+users: #Die zu erstellenden Benutzer
+  - name: ubuntu #Der Benutzername des Nutzers
+    sudo: ALL=(ALL) NOPASSWD:ALL #Die Sudo regeln die verwendet werden für den User
+    groups: users, admin #Die gruppen in welche der User gesteckt wird
+    home: /home/ubuntu #Das home verzeichnis des Users
+    shell: /bin/bash #Die standart shell des users
+    lock_passwd: false #Definiert ob der User sein passwort ändern kann oder nicht
+    plain_text_passwd: 'password' #Das Passwort des Users        
+ssh_pwauth: true #Gibt an ob eine Passwort authentifizierung benötigt wird bei einer SSh conection
+disable_root: false #Definiert ob das root login aktiviert oder deaktiviert ist
+packages: #Die packages die vor-installiert werden sollen
+  - apache2 
+  - curl 
+  - wget 
+  - php 
+  - libapache2-mod-php 
+  - php-mysqli
+  - adminer
+
+package-update: true
+package_upgrade: true
+
+runcmd:
+  - 'curl https://gitlab.com/ch-tbz-it/Stud/m346/m346scripts/-/raw/main/KN01/db.php?inline=false'
+  - 'curl https://gitlab.com/ch-tbz-it/Stud/m346/m346scripts/-/raw/main/KN01/info.php?inline=false'
+
+write_files:
+- content: |
+    <?php
+    // Show all information, defaults to INFO_ALL
+    phpinfo();
+    ?>
+
+  path: ~
