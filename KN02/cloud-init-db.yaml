@@ -24,14 +24,6 @@ package_upgrade: true
 write_files:
 - content: |
     <?php
-    // Show all information, defaults to INFO_ALL
-    phpinfo();
-    ?>
-  path: /var/www/html/info.php
-  permissions: "0644"
-
-- content: |
-    <?php
         //database
         $servername = "127.0.0.1";
         $username = "admin";
@@ -57,6 +49,6 @@ write_files:
   permissions: "0644"
 
   runcmd:
-  - "chown ubuntu:ubuntu /var/www/html/info.php /var/www/html/db.php"
+  - "chown ubuntu:ubuntu /var/www/html/db.php"
   - "sudo a2enconf adminer"
   - "sudo systemctl restart apache2"
