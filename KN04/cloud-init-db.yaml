@@ -12,6 +12,7 @@ users: #Die zu erstellenden Benutzer
 
 ssh_pwauth: true #Gibt an ob eine Passwort authentifizierung benötigt wird bei einer SSh conection
 disable_root: false #Definiert ob das root login aktiviert oder deaktiviert ist
+package_update: true
 packages: #Die packages die vor-installiert werden sollen
   - mariadb-server
 
