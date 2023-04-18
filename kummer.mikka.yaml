@@ -1,0 +1,25 @@
+#cloud-config
+users: #Die zu erstellenden Benutzer
+  - name: ubuntu #Der Benutzername des Nutzers
+    sudo: ALL=(ALL) NOPASSWD:ALL #Die Sudo regeln die verwendet werden für den User
+    groups: users, admin #Die gruppen in welche der User gesteckt wird
+    home: /home/ubuntu #Das home verzeichnis des Users
+    shell: /bin/bash #Die standart shell des users
+    lock_passwd: false #Definiert ob der User sein passwort ändern kann oder nicht
+    plain_text_passwd: 'password' #Das Passwort des Users  
+    ssh_authorized_keys:
+      - ssh-rsa xxxaaabbbcccxxx
+  - name: tbz #Der Benutzername des Nutzers
+    sudo: ALL=(ALL) NOPASSWD:ALL #Die Sudo regeln die verwendet werden für den User
+    groups: users, admin #Die gruppen in welche der User gesteckt wird
+    home: /home/tbz #Das home verzeichnis des Users
+    shell: /bin/bash #Die standart shell des users
+ssh_pwauth: false #Gibt an ob eine passwort autenthifizierte SSH verbindung zu dieser Instanz erstellt werden darf.
+disable_root: false #Definiert ob das root login aktiviert oder deaktiviert ist
+timezone: EU/Central
+locale: de_CH
+package_update: true
+packages: #Die packages die vor-installiert werden sollen
+  - curl 
+  - wget 
+package_upgrade: true

@@ -8,7 +8,7 @@ users: #Die zu erstellenden Benutzer
     lock_passwd: false #Definiert ob der User sein passwort ändern kann oder nicht
     plain_text_passwd: 'password' #Das Passwort des Users  
     ssh_authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpPg0cb7vFa+Y+OqlIECBQsgQ8XlOwXfwfRttFaV262bIsWkcdPFb049HYORADIEikns6ldZ8gEMJqZKuhoviVJ5g30ThiZfr16jueYL9C6wsDv8Tw5HdiwDBclOOsVypaKMu0zJsVfyd4mciO4H1DDqeilTNF75SGA1QIwqnv96Ca+2gHIN4LFWaRvsizocPPluqdd8WPBDoFp6CVhS6hI/0V93xHuo5xTG/eoRXlWLJqxVMAlRlcU3f7f3x7ksGaFuUuLrbSliL5nbdTObMUT56GERoeJB5nhjW1Z8zj6b3sG3faON6E4j0xcq4H/K7TEsfvAoCFSWiUGFx3gbh7 aws-key
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDlFlyfKULouLkuyZXTwwCHoA9Db2OnGTpTaxz25U3+jDFxSRP/MtxUEDvCFXoZq+WtE3pQyVnDOjR8uzKgcUz4CADce3tqt1VLWaxTt+yw9uYSNnKdNbnCwbmGwXFCXiBL3iMDyYgbhPpxBhGO3WLS+YKcMYNQzvq4X8KCSqKdBIRdQeG9QcYZULoPYRJbY0y2Q9RRDZ+QfzXnCBHumA2kQRLa8twzJzgrKxkQctiVdHNBZCOxhQ1DvO3WhLt/fdy1Pcwk4G98GmFUYbgG6y0rCFRYZEQKJyf0393S22bwCp3V1vE3cMRhmARHwcTdrfzhKDrUfW8siLWx6smAQQT8+UBbAQyn+bdWL7UpOxwBffPqzzT46LM8Qn7FXNK+qHg1EH/Br5UGmntk0mc7PkybKCc/xVGpbxbvdDqccEqn9jTQI2rakZAaxXMEgcIjyoesWmF1/mh6z+djqTWS/XuFtVWYbanolrQ5rMeMUYfK1r2M+F96z+5HJTpMddkLsjs= mikka.kummer@noseryoung.com
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key
 ssh_pwauth: true #Gibt an ob eine Passwort authentifizierung benötigt wird bei einer SSh conection
 disable_root: false #Definiert ob das root login aktiviert oder deaktiviert ist
@@ -34,7 +34,7 @@ write_files:
 - content: |
     <?php
         //database
-        $servername = "172.31.3.103";
+        $servername = "172.31.10.101";
         $username = "admin";
         $password = "password";
         $dbname = "mysql";
